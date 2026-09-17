@@ -7,6 +7,6 @@ int main() {
   for (int i = 1; i <= n; i++) {
     giaiThua *= i;
   }
-  printf("Giai thừa của %d là %d\n", n, giaiThua);
+  printf("Giai thừa của %d! là %d\n", n, giaiThua);
   return 0;
 }
