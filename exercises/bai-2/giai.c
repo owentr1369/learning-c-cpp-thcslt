@@ -22,6 +22,18 @@ void xuatMang(int A[], int n) {
 }
 
 // c. Xuất các phần tử chia hết cho 3 có trong mảng
+void xuatPhanTuChiaHetCho3(int A[], int n) {
+  printf("Cac phan tu chia het cho 3 la: ");
+  for (int i = 0; i < n; i++) {
+    if (A[i] % 3 == 0) {
+      if (i == n - 1) {
+        printf("%d\n", A[i]);
+      } else {
+        printf("%d, ", A[i]);
+      }
+    }
+  }
+}
 
 int main() {
   int n;
@@ -36,6 +48,7 @@ int main() {
     // a. Nhập giá trị của mảng
     nhapMang(A, n);
     xuatMang(A, n);
+    xuatPhanTuChiaHetCho3(A, n);
   }
   return 0;
 }
