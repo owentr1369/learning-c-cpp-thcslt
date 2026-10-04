@@ -30,7 +30,8 @@ int main() {
     return 1;
   } else {
     printf("%d so nguyen to dau tien la: \n", N);
-    int xet = 1; // số đang xét, bắt đầu từ số nguyên tố nhỏ nhất
+    int xet = 2; // số đang xét, bắt đầu từ số nguyên tố nhỏ nhất, 1 không phải
+                 // là số nguyên tố
     while (dem < N) {
       if (laSoNguyenTo(xet)) {
         printf("%d ", xet);

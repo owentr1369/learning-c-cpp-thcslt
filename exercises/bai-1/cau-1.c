@@ -4,9 +4,12 @@
 // số có trong N.
 
 // Ký số là nghĩa là từng chữ số tạo nên một số nguyên
-// Ví dụ:
+
+// Test cases:
 // Input: 1201 => Output: 4
 // Input 6821 => Output: 17
+// Input: 0 => Output: Vui long nhap so nguyen duong
+// Input: -123 => Output: Vui long nhap so nguyen duong
 
 int main() {
   int N;
