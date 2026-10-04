@@ -35,6 +35,17 @@ void xuatPhanTuChiaHetCho3(int A[], int n) {
   }
 }
 
+// b. Xuất mảng vừa nhập.
+void demSoDuong(int A[], int n) {
+  int dem = 0;
+  for (int i = 0; i < n; i++) {
+    if (A[i] > 0) {
+      dem++;
+    }
+  }
+  printf("\nSo cac phan tu duong trong mang la: %d", dem);
+}
+
 int main() {
   int n;
 
@@ -49,6 +60,7 @@ int main() {
     nhapMang(A, n);
     xuatMang(A, n);
     xuatPhanTuChiaHetCho3(A, n);
+    demSoDuong(A, n);
   }
   return 0;
 }
