@@ -23,16 +23,21 @@ void xuatMang(int A[], int n) {
 
 // c. Xuất các phần tử chia hết cho 3 có trong mảng
 void xuatPhanTuChiaHetCho3(int A[], int n) {
+  int dem = 0;
   printf("Cac phan tu chia het cho 3 la: ");
   for (int i = 0; i < n; i++) {
     if (A[i] % 3 == 0) {
-      if (i == n - 1) {
-        printf("%d\n", A[i]);
-      } else {
-        printf("%d, ", A[i]);
+      if (dem > 0) {
+        printf(", ");
       }
+      printf("%d", A[i]);
+      dem++;
     }
   }
+  if (dem == 0) {
+    printf("khong co phan tu nao");
+  }
+  printf("\n");
 }
 
 // d. Đếm số lượng số dương có trong mảng
@@ -43,7 +48,7 @@ void demSoDuong(int A[], int n) {
       dem++;
     }
   }
-  printf("\nSo cac phan tu duong trong mang la: %d", dem);
+  printf("So cac phan tu duong trong mang la: %d\n", dem);
 }
 
 // e. Tính tổng các số trong mảng
@@ -52,7 +57,7 @@ void tinhTongMang(int A[], int n) {
   for (int i = 0; i < n; i++) {
     tong += A[i];
   }
-  printf("\nTong cac phan tu duong trong mang la: %d", tong);
+  printf("Tong cac phan tu trong mang la: %d\n", tong);
 }
 
 // f. Tính trung bình cộng của mảng
@@ -63,7 +68,7 @@ void tinhTrungBinhCongMang(int A[], int n) {
     tong += A[i];
   }
   trungBinhCong = tong / n;
-  printf("\nTrung binh cong cua mang la: %.2f", trungBinhCong);
+  printf("Trung binh cong cua mang la: %.2f\n", trungBinhCong);
 }
 
 // g. Tính trung bình cộng các phần tử dương có trong mảng.
@@ -78,10 +83,10 @@ void tinhTrungBinhCongDuongMang(int A[], int n) {
     }
   }
   if (demDuong == 0) {
-    printf("\nMang khong co phan tu duong");
+    printf("Mang khong co phan tu duong\n");
   } else {
     trungBinhCong = tong / demDuong;
-    printf("\nTrung binh cong cac phan tu duong cua mang la: %.2f\n",
+    printf("Trung binh cong cac phan tu duong cua mang la: %.2f\n",
            trungBinhCong);
   }
 }
