@@ -5,5 +5,3 @@ Câu 2: Viết chương trình tính tổng sau: S(n) = 1 + 1.2 + 1.2.3 + ……
 Câu 3: Viết chương trình liệt kê N số nguyên tố đầu tiên.
 
 Câu 4: Viết chương trình in ra bảng cửu chương.
-
-Câu 5: Viết chương trình cho một dòng chữ chạy dọc màn hình, đến đáy thì lại xuất hiện trở lại ở phía đỉnh màn hình và tiếp tục như vậy cho đến khi bấm phím bất kỳ thì kết thúc.
