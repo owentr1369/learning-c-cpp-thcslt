@@ -63,7 +63,23 @@ void tinhTrungBinhCongMang(int A[], int n) {
     tong += A[i];
   }
   trungBinhCong = tong / n;
-  printf("\nTrung binh cong cua mang la: %.2f\n", trungBinhCong);
+  printf("\nTrung binh cong cua mang la: %.2f", trungBinhCong);
+}
+
+// g. Tính trung bình cộng các phần tử dương có trong mảng.
+void tinhTrungBinhCongDuongMang(int A[], int n) {
+  float tong = 0;
+  int demDuong = 0;
+  float trungBinhCong;
+  for (int i = 0; i < n; i++) {
+    if (A[i] > 0) {
+      tong += A[i];
+      demDuong++;
+    }
+  }
+  trungBinhCong = tong / demDuong;
+  printf("\nTrung binh cong cac phan tu duong cua mang la: %.2f\n",
+         trungBinhCong);
 }
 
 int main() {
@@ -83,6 +99,7 @@ int main() {
     demSoDuong(A, n);
     tinhTongMang(A, n);
     tinhTrungBinhCongMang(A, n);
+    tinhTrungBinhCongDuongMang(A, n);
   }
   return 0;
 }
