@@ -47,7 +47,16 @@ void demSoDuong(int A[], int n) {
 }
 
 // e. Tính tổng các số trong mảng
-void tongCacSoTrongMang(int A[], int n) {
+void tinhTongMang(int A[], int n) {
+  int tong = 0;
+  for (int i = 0; i < n; i++) {
+    tong += A[i];
+  }
+  printf("\nTong cac phan tu duong trong mang la: %d", tong);
+}
+
+// f. Tính trung bình cộng của mảng
+void tinhTrungBinhCongMang(int A[], int n) {
   int tong = 0;
   for (int i = 0; i < n; i++) {
     tong += A[i];
@@ -70,7 +79,7 @@ int main() {
     xuatMang(A, n);
     xuatPhanTuChiaHetCho3(A, n);
     demSoDuong(A, n);
-    tongCacSoTrongMang(A, n);
+    tinhTongMang(A, n);
   }
   return 0;
 }
