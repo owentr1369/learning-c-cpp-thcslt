@@ -13,10 +13,14 @@ int main() {
   int tong = 0;
   printf("Nhap so nguyen duong N: ");
   scanf("\n%d", &N);
-  while (N > 0) {
-    tong += N % 10;
-    N /= 10;
+  if (N <= 0) {
+    printf("Vui long nhap so nguyen duong\n");
+  } else {
+    while (N > 0) {
+      tong += N % 10;
+      N /= 10;
+    }
+    printf("Tong cac ky so cua so vua nhap la: %d\n", tong);
   }
-  printf("Tong cac ky so cua so vua nhap la: %d\n", tong);
   return 0;
 }
