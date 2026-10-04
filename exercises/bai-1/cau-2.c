@@ -11,8 +11,8 @@
 
 int main() {
   int n;
-  int tong = 0;
-  int giaithua = 1;
+  double tong = 0;
+  double giaithua = 1;
   printf("Nhap so nguyen duong n: ");
   scanf("\n%d", &n);
   if (n <= 0) {
@@ -22,7 +22,7 @@ int main() {
       giaithua *= i;
       tong += giaithua;
     }
-    printf("S(%d) la: %d\n", n, tong);
+    printf("S(%d) la: %.0f\n", n, tong);
   }
   return 0;
 }
