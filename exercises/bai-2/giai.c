@@ -77,9 +77,13 @@ void tinhTrungBinhCongDuongMang(int A[], int n) {
       demDuong++;
     }
   }
-  trungBinhCong = tong / demDuong;
-  printf("\nTrung binh cong cac phan tu duong cua mang la: %.2f\n",
-         trungBinhCong);
+  if (demDuong == 0) {
+    printf("\nMang khong co phan tu duong");
+  } else {
+    trungBinhCong = tong / demDuong;
+    printf("\nTrung binh cong cac phan tu duong cua mang la: %.2f\n",
+           trungBinhCong);
+  }
 }
 
 int main() {
