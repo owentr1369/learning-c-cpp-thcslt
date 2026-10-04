@@ -35,7 +35,7 @@ void xuatPhanTuChiaHetCho3(int A[], int n) {
   }
 }
 
-// b. Xuất mảng vừa nhập.
+// d. Đếm số lượng số dương có trong mảng
 void demSoDuong(int A[], int n) {
   int dem = 0;
   for (int i = 0; i < n; i++) {
