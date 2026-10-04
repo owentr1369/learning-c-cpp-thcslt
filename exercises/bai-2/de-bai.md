@@ -1,6 +1,6 @@
 Câu 2: Viết chương trình thực hiện:
 
-a. Nhập mảng số nguyên gồm n phần tử (0 < n  10).
+a. Nhập mảng số nguyên gồm n phần tử (0 < n <= 10).
 
 b. Xuất mảng vừa nhập.
 
