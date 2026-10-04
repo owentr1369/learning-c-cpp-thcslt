@@ -58,10 +58,13 @@ void tinhTongMang(int A[], int n) {
 // f. Tính trung bình cộng của mảng
 void tinhTrungBinhCongMang(int A[], int n) {
   int tong = 0;
+  float trungBinhCong;
   for (int i = 0; i < n; i++) {
     tong += A[i];
   }
-  printf("\nTong cac phan tu duong trong mang la: %d", tong);
+  trungBinhCong = tong / n;
+  printf("\nTrung binh cong cac phan tu duong trong mang la: %.2f",
+         trungBinhCong);
 }
 
 int main() {
@@ -80,6 +83,7 @@ int main() {
     xuatPhanTuChiaHetCho3(A, n);
     demSoDuong(A, n);
     tinhTongMang(A, n);
+    tinhTrungBinhCongMang(A, n);
   }
   return 0;
 }
