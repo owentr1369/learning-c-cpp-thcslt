@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 // a. Nhập giá trị của mảng
-void nhapMang(int A[], int n) {
+void nhapPhanTuMang(int A[], int n) {
   printf("Nhap cac gia tri trong mang:\n");
   for (int i = 0; i < n; i++) {
     printf("Nhap phan tu thu %d: ", i + 1);
@@ -102,7 +102,7 @@ int main() {
     printf("Vui long nhap trong khoang 1-10 \n");
   } else {
     // a. Nhập giá trị của mảng
-    nhapMang(A, n);
+    nhapPhanTuMang(A, n);
     xuatMang(A, n);
     xuatPhanTuChiaHetCho3(A, n);
     demSoDuong(A, n);
