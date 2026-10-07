@@ -19,9 +19,9 @@ int main() {
   scanf("%d", &y);
 
   if (d <= 0 || d > 31) {
-    printf("Ngay khong hop le");
+    printf("Ngay khong hop le\n");
   } else if (m <= 0 || m > 12) {
-    printf("Thang khong hop le");
+    printf("Thang khong hop le\n");
   } else {
     // Năm vẫn có thể âm (năm trước Công Nguyên) nên không cần check năm
     printf("\nNgay thang nam da nhap: %02d/%02d/%04d\n", d, m, y);

@@ -19,7 +19,7 @@ int main() {
   printf("Nhap so nguyen duong bat ky co 3 chu so: ");
   scanf("%d", &n);
   if (n < 100 || n > 999) {
-    printf("\nVui long nhap so nguyen duong co 3 chu so\n");
+    printf("\nVui long nhap so nguyen duong co dung 3 chu so\n");
   } else {
     int tram = n / 100;
     int chuc = (n / 10) % 10;

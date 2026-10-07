@@ -17,7 +17,7 @@ int main() {
   printf("Nhap so giay: ");
   scanf("%d", &s);
   if (s < 0) {
-    printf("Vui long nhap so giay khong am");
+    printf("Vui long nhap so giay khong am\n");
   } else {
     int gio = s / 3600;
     int phut =
