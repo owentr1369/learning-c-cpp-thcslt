@@ -3,8 +3,6 @@
 // Câu 5: Viết chương trình đảo ngược một số nguyên dương có đúng 3 chữ số.
 // VD: Nhập vào n=234 => In ra: 432
 
-// Gợi ý: tram = n / 100, chuc = (n / 10) % 10, donvi = n % 10
-
 // Test cases:
 // Input: 234 => Output: 432
 // Input: 999 => Output: 999

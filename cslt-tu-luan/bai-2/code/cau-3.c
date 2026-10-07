@@ -3,9 +3,6 @@
 // Câu 3: Viết chương trình nhập 2 số nguyên và in kết quả của phép (+), phép
 // trừ (-), phép nhân (*), phép chia (/). Nhận xét kết quả chia 2 số nguyên.
 
-// Nhận xét: chia 2 số nguyên trong C sẽ bỏ phần thập phân (7 / 2 = 3). Muốn có
-// kết quả số thực phải ép kiểu: (float)a / b = 3.50
-
 // Test cases (Input: a b; Output: a + b, a - b, a * b, a / b, (float)a / b):
 // Input: 7 2 => Output: 9, 5, 14, 3, 3.50
 // Input: 10 5 => Output: 15, 5, 50, 2, 2.00
