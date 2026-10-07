@@ -13,4 +13,19 @@
 // Input: a = 0, b = 4 => Output: Vui long nhap canh lon hon 0
 // Input: a = -3, b = 4 => Output: Vui long nhap canh lon hon 0
 
-int main() { return 0; }
+int main() {
+  float a, b;
+  printf("Nhap chieu dai canh a: ");
+  scanf("%f", &a);
+  printf("Nhap chieu dai canh b: ");
+  scanf("%f", &b);
+  if (a <= 0 || b <= 0) {
+    printf("\nVui long nhap canh lon hon 0\n");
+  } else {
+    float chuVi = (a + b) * 2;
+    float dienTich = a * b;
+    printf("\nChu vi: %.2f", chuVi);
+    printf("\nDien tich: %.2f\n", dienTich);
+  }
+  return 0;
+}
