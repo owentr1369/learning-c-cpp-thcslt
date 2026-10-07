@@ -3,17 +3,32 @@
 // Câu 3: Viết chương trình nhập 2 số nguyên và in kết quả của phép (+), phép
 // trừ (-), phép nhân (*), phép chia (/). Nhận xét kết quả chia 2 số nguyên.
 
-// Nhận xét: chia 2 số nguyên trong C sẽ bỏ phần thập phân (7 / 2 = 3). Muốn có
-// kết quả số thực phải ép kiểu: (float)a / b = 3.50
-
-// Test cases:
-// Input: a = 7, b = 2 => Output: 7 + 2 = 9, 7 - 2 = 5, 7 * 2 = 14, 7 / 2 = 3
-// Input: a = 10, b = 5 => Output: 10 + 5 = 15, 10 - 5 = 5, 10 * 5 = 50, 10 / 5 = 2
-// Input: a = -7, b = 2 => Output: -7 + 2 = -5, -7 - 2 = -9, -7 * 2 = -14, -7 / 2 = -3
-// Input: a = 3, b = 8 => Output: 3 + 8 = 11, 3 - 8 = -5, 3 * 8 = 24, 3 / 8 = 0
-// Input: a = 10, b = 0 => Output: 10 + 0 = 10, 10 - 0 = 10, 10 * 0 = 0, Khong the chia cho 0
+// Test cases (Input: a b; Output: a + b, a - b, a * b, a / b, (float)a / b):
+// Input: 7 2 => Output: 9, 5, 14, 3, 3.50
+// Input: 10 5 => Output: 15, 5, 50, 2, 2.00
+// Input: -7 2 => Output: -5, -9, -14, -3, -3.50
+// Input: 3 8 => Output: 11, -5, 24, 0, 0.38
+// Input: 10 0 => Output: 10, 10, 0, Vi b = 0 nen khong thuc hien duoc phep chia
 
 int main() {
+  int a, b;
+  printf("Nhap so nguyen a: ");
+  scanf("%d", &a);
+  printf("Nhap so nguyen b: ");
+  scanf("%d", &b);
+  printf("\na + b = %d", a + b);
+  printf("\na - b = %d", a - b);
+  printf("\na * b = %d", a * b);
+  if (b != 0) {
+    printf("\na / b = %d", a / b);
+    printf("\n\nNhan xet: phep chia 2 so nguyen (int) se bo phan thap phan "
+           "(lam tron ve phia 0), vi du -7 / 2 = -3.\n"
+           "Muon co ket qua so thuc thi phai ep kieu float");
+    float ketQua = (float)a / b;
+    printf("\nKet qua sau khi ep kieu thanh float a / b = %.2f\n", ketQua);
+  } else {
+    printf("\nVi b = 0 nen khong thuc hien duoc phep chia\n");
+  }
 
   return 0;
 }
