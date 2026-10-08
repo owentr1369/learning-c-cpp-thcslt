@@ -11,6 +11,11 @@
 // Input: (không có) => Output: dòng thứ i có i dấu * (i từ 1 đến 5)
 
 int main() {
-  // TODO
+  for (int i = 1; i <= 5; i++) {
+    for (int j = 1; j <= i; j++) {
+      printf("*");
+    }
+    printf("\n");
+  }
   return 0;
 }
