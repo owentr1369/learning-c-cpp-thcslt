@@ -12,6 +12,17 @@
 // Input: r = -3 => Output: Vui long nhap ban kinh lon hon 0
 
 int main() {
-  // TODO
+  const float PI = 3.14159;
+  float r;
+  printf("Nhap ban kinh r: ");
+  scanf("%f", &r);
+  if (r <= 0) {
+    printf("\nVui long nhap ban kinh lon hon 0\n");
+  } else {
+    float chuVi = 2 * PI * r;
+    float dienTich = PI * r * r;
+    printf("\nChu vi: %.2f", chuVi);
+    printf("\nDien tich: %.2f\n", dienTich);
+  }
   return 0;
 }
