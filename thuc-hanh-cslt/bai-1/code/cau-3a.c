@@ -8,6 +8,9 @@
 // Input: 0 => Output: 0
 
 int main() {
-  // TODO
+  int a;
+  printf("Nhap so nguyen: ");
+  scanf("%d", &a);
+  printf("So nguyen vua nhap la: %d\n", a);
   return 0;
 }
