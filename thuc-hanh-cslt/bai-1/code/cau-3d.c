@@ -11,6 +11,18 @@
 // Input: 10 0 => Output: 10, 10, 0, Vi b = 0 nen khong thuc hien duoc phep chia
 
 int main() {
-  // TODO
+  int a, b;
+  printf("Nhap so nguyen a: ");
+  scanf("%d", &a);
+  printf("Nhap so nguyen b: ");
+  scanf("%d", &b);
+  printf("\nTong: %d", a + b);
+  printf("\nHieu: %d", a - b);
+  printf("\nTich: %d", a * b);
+  if (b != 0) {
+    printf("\nThuong: %.2f\n", (float)a / b);
+  } else {
+    printf("\nVi b = 0 nen khong thuc hien duoc phep chia\n");
+  }
   return 0;
 }
