@@ -22,6 +22,36 @@
 //   nguyen to, 6 la so hoan thien
 
 int main() {
-  // TODO
+  int n;
+  printf("Nhap n (0 < n <= 100): ");
+  do {
+    scanf("%d", &n);
+    if (n <= 0 || n > 100) {
+      printf("Khong hop le. Nhap lai: ");
+    }
+  } while (n <= 0 || n > 100);
+
+  int soUoc = 0;
+  int tongUoc = 0;
+  for (int i = 1; i <= n; i++) {
+    if (n % i == 0) {
+      soUoc++;
+      if (i < n) { // Tính tổng ước của n, ko tính chính nó
+        tongUoc += i;
+      }
+    }
+  }
+
+  if (soUoc == 2) {
+    printf("\n%d la so nguyen to\n", n);
+  } else {
+    printf("\n%d khong phai la so nguyen to\n", n);
+  }
+
+  if (tongUoc == n) {
+    printf("%d la so hoan thien\n", n);
+  } else {
+    printf("%d khong la so hoan thien\n", n);
+  }
   return 0;
 }
