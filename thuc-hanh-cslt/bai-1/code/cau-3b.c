@@ -9,6 +9,9 @@
 // Input: 0 => Output: 0.00
 
 int main() {
-  // TODO
+  float x;
+  printf("Nhap so thuc: ");
+  scanf("%f", &x);
+  printf("So thuc vua nhap: %.2f\n", x);
   return 0;
 }
