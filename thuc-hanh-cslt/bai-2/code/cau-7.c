@@ -22,6 +22,21 @@
 // Input: 0 => Output: Vui long nhap so km lon hon 0
 
 int main() {
-  // TODO
+  float km;
+  printf("Nhap so km: ");
+  scanf("%f", &km);
+  if (km <= 0) {
+    printf("\nVui long nhap so km lon hon 0\n");
+    return 0;
+  }
+  float tien;
+  if (km <= 1) {
+    tien = 5000;
+  } else if (km <= 30) {
+    tien = 5000 + (km - 1) * 5000;
+  } else {
+    tien = 5000 + 29 * 5000 + (km - 30) * 3000;
+  }
+  printf("\nSo tien phai tra: %.0f dong\n", tien);
   return 0;
 }
