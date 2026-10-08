@@ -50,9 +50,23 @@ e. Tính trung bình cộng các phần tử dương có trong mảng.
 
 f. Xuất các số nguyên tố có trong mảng
 
-Câu 4: (phần đầu đề bị thiếu khi sao chép, ý a được suy ra từ đoạn còn lại)
+g. Đếm số lượng số nguyên tố có trong mảng
 
-a. Nhập mảng số nguyên gồm n phần tử, nếu nhập sai thì thông báo và yêu cầu nhập lại.
+h. Tính tổng các số nguyên tố có trong mảng
+
+i. Tính trung bình cộng các số nguyên tố có trong mảng
+
+j. Tìm phần tử dương đầu tiên
+
+k. Tìm phần tử dương cuối cùng
+
+l. Tìm giá trị phần tử lớn nhất (nhỏ nhất)
+
+Câu 4: Làm các câu 1, và câu 2 -a, b, d, e, f đối với mảng một chiều các số thực.
+
+Câu 5: Viết chương trình thực hiện:
+
+a. Nhập vào mảng a gồm n phần tử, trong quá trình nhập kiểm tra các phần tử nhập vào không được trùng, nếu trùng thông báo và yêu cầu nhập lại.
 
 b. Xuất mảng.
 
