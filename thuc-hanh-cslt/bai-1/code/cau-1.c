@@ -6,6 +6,6 @@
 // Input: (không có) => Output: Hello World
 
 int main() {
-  // TODO
+  printf("Hello World\n");
   return 0;
 }
