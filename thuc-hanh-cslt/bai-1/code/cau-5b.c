@@ -11,6 +11,20 @@
 // Input: 6 6 6 => Output: 6
 
 int main() {
-  // TODO
+  int a, b, c;
+  printf("Nhap so nguyen a: ");
+  scanf("%d", &a);
+  printf("Nhap so nguyen b: ");
+  scanf("%d", &b);
+  printf("Nhap so nguyen c: ");
+  scanf("%d", &c);
+  int max = a;
+  if (b > max) {
+    max = b;
+  }
+  if (c > max) {
+    max = c;
+  }
+  printf("\nGia tri lon nhat: %d\n", max);
   return 0;
 }
