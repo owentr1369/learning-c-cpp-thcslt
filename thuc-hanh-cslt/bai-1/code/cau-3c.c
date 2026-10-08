@@ -9,6 +9,9 @@
 // Input: # => Output: #
 
 int main() {
-  // TODO
+  char c;
+  printf("Nhap ki tu: ");
+  scanf(" %c", &c);
+  printf("Ki tu vua nhap: %c\n", c);
   return 0;
 }
