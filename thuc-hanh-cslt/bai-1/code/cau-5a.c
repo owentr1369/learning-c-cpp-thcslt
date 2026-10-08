@@ -9,6 +9,12 @@
 // Input: 4 4 => Output: 4
 
 int main() {
-  // TODO
+  int a, b;
+  printf("Nhap so nguyen a: ");
+  scanf("%d", &a);
+  printf("Nhap so nguyen b: ");
+  scanf("%d", &b);
+  int max = a > b ? a : b;
+  printf("\nGia tri lon nhat: %d\n", max);
   return 0;
 }
