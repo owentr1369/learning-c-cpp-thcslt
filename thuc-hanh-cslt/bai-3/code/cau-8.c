@@ -11,6 +11,14 @@
 // Input: 10, 15, 9 => Output: (yeu cau nhap lai 2 lan) So vua nhap: 9
 
 int main() {
-  // TODO
+  int n;
+  printf("Nhap so nguyen n (0-9): ");
+  do {
+    scanf("%d", &n);
+    if (n < 0 || n > 9) {
+      printf("Khong hop le. Nhap lai: ");
+    }
+  } while (n < 0 || n > 9);
+  printf("\nSo vua nhap: %d\n", n);
   return 0;
 }
