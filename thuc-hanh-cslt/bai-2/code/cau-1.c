@@ -12,6 +12,20 @@
 // Input: 0 0 => Output: Phuong trinh vo so nghiem
 
 int main() {
-  // TODO
+  float a, b;
+  printf("Nhap a: ");
+  scanf("%f", &a);
+  printf("Nhap b: ");
+  scanf("%f", &b);
+  if (a == 0) {
+    if (b == 0) {
+      printf("\nPhuong trinh vo so nghiem\n");
+    } else {
+      printf("\nPhuong trinh vo nghiem\n");
+    }
+  } else {
+    float x = (b == 0) ? 0 : -b / a;
+    printf("\nx = %.2f\n", x);
+  }
   return 0;
 }
