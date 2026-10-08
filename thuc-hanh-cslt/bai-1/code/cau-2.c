@@ -17,6 +17,9 @@
 //   (lưu ý: dấu " phải viết là \" trong chuỗi printf)
 
 int main() {
-  // TODO
+  printf("******************************************* \nTHIEP MOI \nThan moi "
+         "ban: \"Le Loi\" \nToi du le sinh nhat cua minh \nVao luc 19h ngay "
+         "20/10/2016 \nTai: 05/42 Vinh Vien - TP. HCM \nRat mong duoc don "
+         "tiep! \nHo Le Thu \n\n*******************************************");
   return 0;
 }
