@@ -10,8 +10,11 @@
 // f. So sánh hai chuỗi ký tự.
 // g. Kiểm tra chuỗi s2 trong một chuỗi ký tự khác.
 
-// Test cases (chuỗi có thể chứa dấu cách; f so sánh s1 ban đầu với s2;
-// g nhập thêm chuỗi s4 rồi kiểm tra s2 có nằm trong s4 không, vị trí tính từ 0):
+// Test cases:
+// - Chuỗi có thể chứa dấu cách.
+// - f: so sánh s1 ban đầu với s2.
+// - g: nhập thêm chuỗi s4 rồi kiểm tra s2 có nằm trong s4 không (vị trí tính
+//   từ 0).
 // Input: s1 = "Hello", s2 = "World", s4 = "Hello World" => Output:
 //   c. Do dai s1: 5, Do dai s2: 5
 //   d. s3 = Hello
