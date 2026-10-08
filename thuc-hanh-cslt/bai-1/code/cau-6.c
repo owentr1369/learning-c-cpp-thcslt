@@ -19,6 +19,23 @@
 // Input: -3 4 5 => Output: Vui long nhap 3 so nguyen duong
 
 int main() {
-  // TODO
+  int a, b, c;
+  printf("Nhap canh a: ");
+  scanf("%d", &a);
+  printf("Nhap canh b: ");
+  scanf("%d", &b);
+  printf("Nhap canh c: ");
+  scanf("%d", &c);
+  if (a <= 0 || b <= 0 || c <= 0) {
+    printf("\nVui long nhap 3 so nguyen duong\n");
+  } else if (a + b <= c || a + c <= b || b + c <= a) {
+    printf("\nKhong lap thanh tam giac\n");
+  } else {
+    int chuVi = a + b + c;
+    float p = chuVi / 2.0;
+    float dienTich = sqrt(p * (p - a) * (p - b) * (p - c));
+    printf("\nChu vi: %d", chuVi);
+    printf("\nDien tich: %.2f\n", dienTich);
+  }
   return 0;
 }
