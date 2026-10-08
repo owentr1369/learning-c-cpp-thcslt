@@ -16,7 +16,8 @@
 // Input: 28 => Output: 28 khong phai la so nguyen to, 28 la so hoan thien
 // Input: 12 => Output: 12 khong phai la so nguyen to, 12 khong la so hoan thien
 // Input: 1 => Output: 1 khong phai la so nguyen to, 1 khong la so hoan thien
-// Input: 100 => Output: 100 khong phai la so nguyen to, 100 khong la so hoan thien
+// Input: 100 => Output: 100 khong phai la so nguyen to,
+//   100 khong la so hoan thien
 // Input: 0, 101, 6 => Output: (yeu cau nhap lai 2 lan) 6 khong phai la so
 //   nguyen to, 6 la so hoan thien
 
