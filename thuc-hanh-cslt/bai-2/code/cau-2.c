@@ -46,8 +46,9 @@ int main() {
       float x = (b == 0) ? 0 : -b / (2 * a);
       printf("\nPhuong trinh co nghiem kep x = %.2f\n", x);
     } else {
-      float x1 = (-b + sqrt(delta)) / (2 * a);
-      float x2 = (-b - sqrt(delta)) / (2 * a);
+      float canDelta = (float)sqrt(delta);
+      float x1 = (-b + canDelta) / (2 * a);
+      float x2 = (-b - canDelta) / (2 * a);
       printf("\nx1 = %.2f\nx2 = %.2f\n", x1, x2);
     }
   }
