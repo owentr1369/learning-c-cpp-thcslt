@@ -11,6 +11,18 @@
 // Input: -25 => Output: Vui long nhap so tu nhien (N >= 0)
 
 int main() {
-  // TODO
+  int n;
+  printf("Nhap N: ");
+  scanf("%d", &n);
+  if (n < 0) {
+    printf("\nVui long nhap so tu nhien (N >= 0)\n");
+    return 0;
+  }
+  int dem = 0;
+  do {
+    dem++;
+    n /= 10;
+  } while (n > 0);
+  printf("\nSo chu so: %d\n", dem);
   return 0;
 }
