@@ -17,6 +17,26 @@
 // Input: 0 3 4 => Output: Vui long nhap 3 so nguyen duong
 
 int main() {
-  // TODO
+  int a, b, c;
+  printf("Nhap canh a: ");
+  scanf("%d", &a);
+  printf("Nhap canh b: ");
+  scanf("%d", &b);
+  printf("Nhap canh c: ");
+  scanf("%d", &c);
+  if (a <= 0 || b <= 0 || c <= 0) {
+    printf("\nVui long nhap 3 so nguyen duong\n");
+  } else if (a + b <= c || a + c <= b || b + c <= a) {
+    printf("\nKhong lap thanh tam giac\n");
+  } else if (a == b && b == c) {
+    printf("\nTam giac deu\n");
+  } else if (a * a + b * b == c * c || a * a + c * c == b * b ||
+             b * b + c * c == a * a) { // Định lý Pytago
+    printf("\nTam giac vuong\n");
+  } else if (a == b || b == c || a == c) {
+    printf("\nTam giac can\n");
+  } else {
+    printf("\nTam giac thuong\n");
+  }
   return 0;
 }
