@@ -10,6 +10,17 @@
 // Input: -3 => Output: Vui long nhap N >= 0
 
 int main() {
-  // TODO
+  int n;
+  printf("Nhap N: ");
+  scanf("%d", &n);
+  if (n < 0) {
+    printf("\nVui long nhap N >= 0\n");
+  } else {
+    long long giaiThua = 1;
+    for (int i = 1; i <= n; i++) {
+      giaiThua *= i;
+    }
+    printf("\n%d! = %lld\n", n, giaiThua);
+  }
   return 0;
 }
