@@ -1,37 +1,38 @@
 #include <stdio.h>
 
-// Câu 4:
-// a. Nhập mảng số nguyên gồm n phần tử, nếu nhập sai thì thông báo và yêu cầu
-//    nhập lại.
-// b. Xuất mảng.
-// c. Xuất ra màn hình các phần tử là số chính phương nằm tại những vị trí lẻ
-//    trong mảng.
-// d. Xuất ra vị trí của các phần tử có giá trị lớn nhất.
-// e. Viết hàm tính tổng các phần tử nằm ở vị trí chẵn trong mảng.
-// f. Viết hàm sắp xếp mảng theo thứ tự tăng dần.
-// Yêu cầu chương trình thực hiện theo menu chức năng.
+// Câu 4: Làm các câu 1, và câu 2 -a, b, d, e, f đối với mảng một chiều các số
+// thực.
+// Phạm vi: các hàm của câu 1 (trừ hàm liên quan số nguyên tố), câu 2a, 2b, và
+// các ý của câu 3 áp dụng được cho số thực: b (đếm số dương), d (trung bình
+// cộng), e (trung bình cộng số dương).
 
-// Test cases (vị trí tính từ 0):
-// Input: n = 7, 4 9 16 25 3 10 25 => Output:
-//   b. 4 9 16 25 3 10 25
-//   c. 9 25
-//   d. Vi tri max: 3 6
-//   e. Tong vi tri chan: 48
-//   f. 3 4 9 10 16 25 25
-// Input: n = 4, 0 1 2 1 => Output:
-//   b. 0 1 2 1
-//   c. 1 1
-//   d. Vi tri max: 2
-//   e. Tong vi tri chan: 2
-//   f. 0 1 1 2
-// Input: n = 1, -4 => Output:
-//   b. -4
-//   c. (khong co so nao)
-//   d. Vi tri max: 0
-//   e. Tong vi tri chan: -4
-//   f. -4
-// Input: n = 0 => Output: thong bao nhap sai va yeu cau nhap lai
-// Menu: chon chuc nang khong co trong menu => Lua chon khong hop le
+// Test cases (xuất 2 chữ số thập phân, vị trí tính từ 0;
+// a = 1.5 -2.25 3 0 4.75 nếu không ghi khác):
+// Cau 2 - Nhap/Xuat:
+//   Input: n = 5, 1.5 -2.25 3 0 4.75 => Output: 1.50 -2.25 3.00 0.00 4.75
+//   Input: n = 0, n = 11, ... => Output: yeu cau nhap lai
+// Cau 3:
+//   b. So luong so duong: 3
+//   d. Trung binh cong: 1.40
+//   e. Trung binh cong so duong: 3.08
+//   Voi a = -1.5 -0.5:
+//   b. So luong so duong: 0
+//   d. Trung binh cong: -1.00
+//   e. Khong co so duong nao
+// Cau 1:
+//   Sao chep => b = 1.50 -2.25 3.00 0.00 4.75
+//   Tim x = 3 => 3.00 nam o vi tri 2
+//   Tim x = 2.5 => 2.50 khong co trong mang
+//   Gop a voi b = 9.5 -1 => c = 1.50 -2.25 3.00 0.00 4.75 9.50 -1.00, nc = 7
+//   Max => 4.75
+//   Sap xep tang => -2.25 0.00 1.50 3.00 4.75
+//   Sap xep giam => 4.75 3.00 1.50 0.00 -2.25
+//   Them 2.5 vao vi tri 1 => 1.50 2.50 -2.25 3.00 0.00 4.75
+//   Xoa vi tri 0 => -2.25 3.00 0.00 4.75
+//   Sua vi tri 2 thanh 3.5 => 1.50 -2.25 3.50 0.00 4.75
+//   Chen x = 2 vao mang tang -2.25 0 1.5 3 4.75 => -2.25 0.00 1.50 2.00 3.00 4.75
+//   Xoa cac phan tu nho hon 1 => 1.50 3.00 4.75
+//   Cap nhat max thanh min => 1.50 -2.25 3.00 0.00 -2.25
 
 int main() {
   // TODO
