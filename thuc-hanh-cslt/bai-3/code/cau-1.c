@@ -11,6 +11,19 @@
 // Input: 0 => Output: Vui long nhap N > 0
 
 int main() {
-  // TODO
+  int n;
+  printf("Nhap N: ");
+  scanf("%d", &n);
+  if (n <= 0) {
+    printf("\nVui long nhap N > 0\n");
+    return 0;
+  }
+  int tong = 0;
+  for (int i = 1; i <= n; i++) {
+    if (n % i == 0) {
+      tong += i;
+    }
+  }
+  printf("\nTong cac uoc cua %d la %d\n", n, tong);
   return 0;
 }
