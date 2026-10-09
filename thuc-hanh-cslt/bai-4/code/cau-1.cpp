@@ -92,6 +92,21 @@ void tongCacSoNguyenTo(int n) {
   printf("Tong cac so nguyen to trong pham vi tu 1 den %d la: %d\n", n, tong);
 }
 
+void tbcCacSoNguyenTo(int n) {
+  float tong = 0;
+  int dem = 0;
+  for (int i = 2; i <= n; i++) {
+    if (kiemTraSoNguyenTo(i)) {
+      tong += i;
+      dem++;
+    }
+  }
+  float tbc = float(tong / dem);
+  printf(
+      "Trung binh cong cac so nguyen to trong pham vi tu 1 den %d la: %.2f\n",
+      n, tbc);
+}
+
 int main() {
   int n;
   // a. Nhập vào một số nguyên n (0 < n < 100).
@@ -108,5 +123,7 @@ int main() {
   demCacSoNguyenTo(n);
   // e. Tính tổng các số nguyên tố trong phạm vi từ 1 đến n.
   tongCacSoNguyenTo(n);
+  // f. Tính trung bình cộng các số nguyên tố trong phạm vi từ 1 đến n.
+  tbcCacSoNguyenTo(n);
   return 0;
 }
