@@ -39,6 +39,65 @@
 // Input: 0 => Output: Vui long nhap n > 0 (yeu cau nhap lai)
 
 int main() {
-  // TODO
+  int n;
+  printf("Nhap n (n > 0): ");
+  do {
+    scanf("%d", &n);
+    if (n <= 0) {
+      printf("Vui long nhap n > 0: ");
+    }
+  } while (n <= 0);
+  float x;
+  printf("Nhap x: ");
+  scanf("%f", &x);
+
+  // a
+  printf("\na. ");
+  for (int i = 1; i <= n; i++) {
+    printf("%d ", i);
+  }
+
+  // b
+  printf("\nb. ");
+  if (n < 2) {
+    printf("khong co so nao");
+  }
+  for (int i = 2; i <= n; i += 2) {
+    printf("%d ", i);
+  }
+
+  // c
+  printf("\nc. ");
+  for (int i = 1; i <= n; i += 2) {
+    if (i % 3 != 0) {
+      printf("%d ", i);
+    }
+  }
+
+  // d
+  int s1 = 0;
+  int s2 = 0;
+  float s3 = 0;
+  float s4 = 1;
+  for (int i = 1; i <= n; i++) {
+    s1 += i;
+    if (i % 2 == 0) {
+      s2 += i;
+    } else {
+      s2 -= i;
+    }
+    s3 += (float)i / (i + 1);
+    s4 *= x;
+  }
+  printf("\nd. S1 = %d, S2 = %d, S3 = %.2f, S4 = %.2f", s1, s2, s3, s4);
+
+  // e
+  int tongChuSo = 0;
+  int m = n;
+  while (m > 0) {
+    tongChuSo += m % 10;
+    m /= 10;
+  }
+  printf("\ne. Tong cac chu so: %d\n", tongChuSo);
   return 0;
 }

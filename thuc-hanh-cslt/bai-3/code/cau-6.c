@@ -9,6 +9,19 @@
 // Input: 0 => Output: Vui long nhap n >= 1
 
 int main() {
-  // TODO
+  int n;
+  printf("Nhap n: ");
+  scanf("%d", &n);
+  if (n < 1) {
+    printf("\nVui long nhap n >= 1\n");
+    return 0;
+  }
+  printf("\n");
+  int i = 1;
+  while (i <= n) {
+    printf("%d ", i);
+    i++;
+  }
+  printf("\n");
   return 0;
 }

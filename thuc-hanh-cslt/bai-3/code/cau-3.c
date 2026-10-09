@@ -10,6 +10,28 @@
 // Input: 31 10 => Output: Vui long nhap a <= b
 
 int main() {
-  // TODO
+  int a, b;
+  printf("Nhap a: ");
+  scanf("%d", &a);
+  printf("Nhap b: ");
+  scanf("%d", &b);
+  if (a > b) {
+    printf("\nVui long nhap a <= b\n");
+    return 0;
+  }
+  int tong = 0;
+  int dem = 0;
+  printf("\nCac boi so cua 3: ");
+  for (int i = a; i <= b; i++) {
+    if (i % 3 == 0) {
+      printf("%d ", i);
+      tong += i;
+      dem++;
+    }
+  }
+  if (dem == 0) {
+    printf("khong co so nao");
+  }
+  printf("\nTong: %d\n", tong);
   return 0;
 }

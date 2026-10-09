@@ -11,7 +11,27 @@
 // Input: 5 0 2 => Output: Vui long nhap 3 so nguyen duong nho hon 10
 // Input: 10 1 1 => Output: Vui long nhap 3 so nguyen duong nho hon 10
 
+int giaiThua(int n) {
+  int ketQua = 1;
+  for (int i = 1; i <= n; i++) {
+    ketQua *= i;
+  }
+  return ketQua;
+}
+
 int main() {
-  // TODO
+  int a, b, c;
+  printf("Nhap a: ");
+  scanf("%d", &a);
+  printf("Nhap b: ");
+  scanf("%d", &b);
+  printf("Nhap c: ");
+  scanf("%d", &c);
+  if (a <= 0 || a >= 10 || b <= 0 || b >= 10 || c <= 0 || c >= 10) {
+    printf("\nVui long nhap 3 so nguyen duong nho hon 10\n");
+    return 0;
+  }
+  int s = giaiThua(a) + giaiThua(b) + giaiThua(c);
+  printf("\nS = %d\n", s);
   return 0;
 }
