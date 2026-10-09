@@ -72,39 +72,28 @@ void lietKeCacSoNguyenTo(int n) {
   printf("\n");
 }
 
-void demCacSoNguyenTo(int n) {
+int demCacSoNguyenTo(int n) {
   int dem = 0;
   for (int i = 2; i <= n; i++) {
     if (kiemTraSoNguyenTo(i)) {
       dem++;
     }
   }
-  printf("So luong so nguyen to trong pham vi tu 1 den %d la: %d\n", n, dem);
+  return dem;
 }
 
-void tongCacSoNguyenTo(int n) {
+int tongCacSoNguyenTo(int n) {
   int tong = 0;
   for (int i = 2; i <= n; i++) {
     if (kiemTraSoNguyenTo(i)) {
       tong += i;
     }
   }
-  printf("Tong cac so nguyen to trong pham vi tu 1 den %d la: %d\n", n, tong);
+  return tong;
 }
 
-void tbcCacSoNguyenTo(int n) {
-  float tong = 0;
-  int dem = 0;
-  for (int i = 2; i <= n; i++) {
-    if (kiemTraSoNguyenTo(i)) {
-      tong += i;
-      dem++;
-    }
-  }
-  float tbc = float(tong / dem);
-  printf(
-      "Trung binh cong cac so nguyen to trong pham vi tu 1 den %d la: %.2f\n",
-      n, tbc);
+float tbcCacSoNguyenTo(int n) {
+  return (float)tongCacSoNguyenTo(n) / demCacSoNguyenTo(n);
 }
 
 int main() {
@@ -120,10 +109,18 @@ int main() {
   // c. Liệt kê các số nguyên tố trong phạm vi từ 1 đến n.
   lietKeCacSoNguyenTo(n);
   // d. Đếm số lượng số nguyên tố trong phạm vi từ 1 đến n.
-  demCacSoNguyenTo(n);
+  printf("So luong so nguyen to trong pham vi tu 1 den %d la: %d\n", n,
+         demCacSoNguyenTo(n));
   // e. Tính tổng các số nguyên tố trong phạm vi từ 1 đến n.
-  tongCacSoNguyenTo(n);
+  printf("Tong cac so nguyen to trong pham vi tu 1 den %d la: %d\n", n,
+         tongCacSoNguyenTo(n));
   // f. Tính trung bình cộng các số nguyên tố trong phạm vi từ 1 đến n.
-  tbcCacSoNguyenTo(n);
+  if (demCacSoNguyenTo(n) == 0) {
+    printf("Khong co so nguyen to nao de tinh trung binh cong\n");
+  } else {
+    printf(
+        "Trung binh cong cac so nguyen to trong pham vi tu 1 den %d la: %.2f\n",
+        n, tbcCacSoNguyenTo(n));
+  }
   return 0;
 }
