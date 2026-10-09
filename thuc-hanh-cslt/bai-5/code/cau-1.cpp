@@ -1,3 +1,4 @@
+#include <cstdio>
 #include <stdio.h>
 
 // Câu 1: Viết hàm thực hiện từng yêu cầu sau:
@@ -84,6 +85,19 @@ void saoChepMang(int a[], int b[], int n) {
   }
 }
 
+void timViTriPhanTu(int a[], int n) {
+  int x;
+  printf("Nhap x can tim: ");
+  scanf("%d", &x);
+  for (int i = 0; i < n; i++) {
+    if (a[i] == x) {
+      printf("Vi tri dau tien cua %d trong a la: %d\n", x, i);
+      return;
+    }
+  }
+  printf("%d khong ton tai trong mang a\n", x);
+}
+
 int main() {
   int a[max];
   int n;
@@ -94,6 +108,8 @@ int main() {
   saoChepMang(a, b, n);
   printf("Mang b sau khi sao chep: ");
   xuatMang(b, n);
+
+  timViTriPhanTu(a, n);
 
   return 0;
 }
