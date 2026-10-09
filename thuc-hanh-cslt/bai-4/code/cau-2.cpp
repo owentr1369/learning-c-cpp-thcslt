@@ -119,7 +119,21 @@ void timUCLN() {
   scanf("%d", &a);
   printf("Nhap b: ");
   scanf("%d", &b);
-  // TODO
+  if (a == 0 && b == 0) {
+    printf("Khong ton tai UCLN\n");
+    return;
+  }
+  if (a == 0 || b == 0) {
+    printf("UCLN = %d\n", a + b);
+    return;
+  }
+  int min = a < b ? a : b;
+  for (int i = min; i >= 1; i--) {
+    if (a % i == 0 && b % i == 0) {
+      printf("UCLN = %d\n", i);
+      return;
+    }
+  }
 }
 
 void chonMenu(int &chon) {
