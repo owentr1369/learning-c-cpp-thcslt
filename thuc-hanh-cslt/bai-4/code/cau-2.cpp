@@ -138,6 +138,7 @@ void timUCLN() {
 
 void chonMenu(int &chon) {
   do {
+    hienThiMenu();
     scanf("%d", &chon);
     switch (chon) {
     case 1:
@@ -160,14 +161,13 @@ void chonMenu(int &chon) {
       printf("Thoat chuong trinh\n");
       break;
     default:
-      printf("Lua chon khong hop le, nhap lai: ");
+      printf("Lua chon khong hop le\n");
     }
-  } while (chon < 0 || chon > 4);
+  } while (chon != 0);
 }
 
 int main() {
   int luaChon = 0;
-  hienThiMenu();
   chonMenu(luaChon);
   return 0;
 }
