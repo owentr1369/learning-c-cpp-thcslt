@@ -78,10 +78,22 @@ void xuatMang(int a[], int n) {
   printf("\n");
 }
 
+void saoChepMang(int a[], int b[], int n) {
+  for (int i = 0; i < n; i++) {
+    b[i] = a[i];
+  }
+}
+
 int main() {
   int a[max];
   int n;
   nhapMang(a, n);
   xuatMang(a, n);
+
+  int b[max];
+  saoChepMang(a, b, n);
+  printf("Mang b sau khi sao chep: ");
+  xuatMang(b, n);
+
   return 0;
 }
