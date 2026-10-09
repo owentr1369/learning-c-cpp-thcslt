@@ -65,6 +65,8 @@ void giaiPTBac1() {
 }
 
 // 2: Kiểm tra một số nguyên có là số hoàn thiện không?
+// Số hoàn thiện là số nguyên dương bằng tổng các ước của nó, không tính chính
+// nó.
 void laSoHoanThien() {
   int n;
   printf("Nhap n: ");
