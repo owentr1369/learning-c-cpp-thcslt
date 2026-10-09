@@ -9,32 +9,6 @@
 // 0: Thoát khỏi chương trình.
 // (Menu lặp lại cho đến khi chọn 0.)
 
-// Test cases (Input: lua chon, sau do la du lieu cua chuc nang do):
-// Chuc nang 1 (Input: a b):
-//   1, 2 -4 => Output: x = 2.00
-//   1, 3 1 => Output: x = -0.33
-//   1, 0 5 => Output: Phuong trinh vo nghiem
-//   1, 0 0 => Output: Phuong trinh vo so nghiem
-// Chuc nang 2 (Input: n):
-//   2, 6 => Output: 6 la so hoan thien
-//   2, 28 => Output: 28 la so hoan thien
-//   2, 496 => Output: 496 la so hoan thien
-//   2, 12 => Output: 12 khong la so hoan thien
-//   2, 1 => Output: 1 khong la so hoan thien
-// Chuc nang 3 (Input: n):
-//   3, 30 => Output: Cac so hoan thien tu 1 den 30 la: 6 28
-//   3, 500 => Output: Cac so hoan thien tu 1 den 500 la: 6 28 496
-//   3, 5 => Output: Khong co so hoan thien nao tu 1 den 5
-// Chuc nang 4 (Input: a b):
-//   4, 12 18 => Output: UCLN = 6
-//   4, 100 75 => Output: UCLN = 25
-//   4, 17 5 => Output: UCLN = 1
-//   4, 0 5 => Output: UCLN = 5
-//   4, 0 0 => Output: Khong ton tai UCLN
-// Khac:
-//   7 => Output: Lua chon khong hop le (hien lai menu)
-//   0 => Output: Thoat chuong trinh
-
 void hienThiMenu() {
   printf("\n========== MENU ==========\n");
   printf("1. Giai phuong trinh bac 1 ax + b = 0\n");
