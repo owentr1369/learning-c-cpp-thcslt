@@ -22,9 +22,9 @@
 //   2, 12 => Output: 12 khong la so hoan thien
 //   2, 1 => Output: 1 khong la so hoan thien
 // Chuc nang 3 (Input: n):
-//   3, 30 => Output: 6 28
-//   3, 500 => Output: 6 28 496
-//   3, 5 => Output: (khong co so hoan thien nao)
+//   3, 30 => Output: Cac so hoan thien tu 1 den 30 la: 6 28
+//   3, 500 => Output: Cac so hoan thien tu 1 den 500 la: 6 28 496
+//   3, 5 => Output: Khong co so hoan thien nao tu 1 den 5
 // Chuc nang 4 (Input: a b):
 //   4, 12 18 => Output: UCLN = 6
 //   4, 100 75 => Output: UCLN = 25
@@ -64,6 +64,17 @@ void giaiPTBac1() {
   }
 }
 
+// Trả về 1 nếu n là số hoàn thiện, ngược lại trả về 0.
+int kiemTraSoHoanThien(int n) {
+  int tong = 0;
+  for (int i = 1; i < n; i++) {
+    if (n % i == 0) {
+      tong += i;
+    }
+  }
+  return n > 0 && tong == n;
+}
+
 // 2: Kiểm tra một số nguyên có là số hoàn thiện không?
 // Số hoàn thiện là số nguyên dương bằng tổng các ước của nó, không tính chính
 // nó.
@@ -71,13 +82,7 @@ void laSoHoanThien() {
   int n;
   printf("Nhap n: ");
   scanf("%d", &n);
-  int tong = 0;
-  for (int i = 1; i < n; i++) {
-    if (n % i == 0) {
-      tong += i;
-    }
-  }
-  if (n > 0 && tong == n) {
+  if (kiemTraSoHoanThien(n)) {
     printf("%d la so hoan thien\n", n);
   } else {
     printf("%d khong la so hoan thien\n", n);
@@ -89,7 +94,22 @@ void lietKeSoHoanThien() {
   int n;
   printf("Nhap n: ");
   scanf("%d", &n);
-  // TODO
+  int coSoHoanThien = 0;
+  for (int i = 1; i <= n; i++) {
+    if (kiemTraSoHoanThien(i)) {
+      // Bật cờ coSoHoanThien thành true (1) khi có 1 số bất kì là hoàn thiện
+      if (!coSoHoanThien) {
+        printf("Cac so hoan thien trong pham vi tu 1 den %d la:", n);
+        coSoHoanThien = 1;
+      }
+      printf(" %d", i);
+    }
+  }
+  if (coSoHoanThien) {
+    printf("\n");
+  } else {
+    printf("Khong co so hoan thien nao tu 1 den %d\n", n);
+  }
 }
 
 // 4: Tìm ước chung lớn nhất của hai số nguyên a, b.
