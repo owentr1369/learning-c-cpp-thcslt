@@ -46,6 +46,28 @@ void hienThiMenu() {
   printf("Nhap lua chon: ");
 }
 
+// 1: Giải phương trình bậc 1 ax + b = 0.
+void giaiPTBac1(float a, float b) {
+  // TODO
+}
+
+// 2: Kiểm tra một số nguyên có là số hoàn thiện không?
+int laSoHoanThien(int n) {
+  // TODO
+  return 0;
+}
+
+// 3: Liệt kê các số hoàn thiện trong phạm vi từ 1..n.
+void lietKeSoHoanThien(int n) {
+  // TODO
+}
+
+// 4: Tìm ước chung lớn nhất của hai số nguyên a, b.
+int timUCLN(int a, int b) {
+  // TODO
+  return 0;
+}
+
 void chonMenu(int &chon) {
   do {
     scanf("%d", &chon);
