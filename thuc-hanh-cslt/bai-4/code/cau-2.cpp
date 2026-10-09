@@ -1,3 +1,4 @@
+#include <cstdio>
 #include <stdio.h>
 
 // Câu 2: Viết chương trình theo hàm cho phép thực hiện chọn lựa công việc:
@@ -34,7 +35,45 @@
 //   7 => Output: Lua chon khong hop le (hien lai menu)
 //   0 => Output: Thoat chuong trinh
 
+void hienThiMenu() {
+  printf("\n========== MENU ==========\n");
+  printf("1. Giai phuong trinh bac 1 ax + b = 0\n");
+  printf("2. Kiem tra so hoan thien\n");
+  printf("3. Liet ke cac so hoan thien tu 1 den n\n");
+  printf("4. Tim uoc chung lon nhat cua a, b\n");
+  printf("0. Thoat chuong trinh\n");
+  printf("==========================\n");
+  printf("Nhap lua chon: ");
+}
+
+void chonMenu(int &chon) {
+  do {
+    scanf("%d", &chon);
+    switch (chon) {
+    case 1:
+      printf("1. Giai phuong trinh bac 1 ax + b = 0\n");
+      break;
+    case 2:
+      printf("2. Kiem tra so hoan thien\n");
+      break;
+    case 3:
+      printf("3. Liet ke cac so hoan thien tu 1 den n\n");
+      break;
+    case 4:
+      printf("4. Tim uoc chung lon nhat cua a, b\n");
+      break;
+    case 0:
+      printf("Thoat chuong trinh\n");
+      break;
+    default:
+      printf("Lua chon khong hop le, nhap lai: ");
+    }
+  } while (chon < 0 || chon > 4);
+}
+
 int main() {
-  // TODO
+  int luaChon = 0;
+  hienThiMenu();
+  chonMenu(luaChon);
   return 0;
 }
