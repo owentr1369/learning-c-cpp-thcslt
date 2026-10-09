@@ -47,25 +47,39 @@ void hienThiMenu() {
 }
 
 // 1: Giải phương trình bậc 1 ax + b = 0.
-void giaiPTBac1(float a, float b) {
+void giaiPTBac1() {
+  float a, b;
+  printf("Nhap a: ");
+  scanf("%f", &a);
+  printf("Nhap b: ");
+  scanf("%f", &b);
   // TODO
 }
 
 // 2: Kiểm tra một số nguyên có là số hoàn thiện không?
-int laSoHoanThien(int n) {
+void laSoHoanThien() {
+  int n;
+  printf("Nhap n: ");
+  scanf("%d", &n);
   // TODO
-  return 0;
 }
 
 // 3: Liệt kê các số hoàn thiện trong phạm vi từ 1..n.
-void lietKeSoHoanThien(int n) {
+void lietKeSoHoanThien() {
+  int n;
+  printf("Nhap n: ");
+  scanf("%d", &n);
   // TODO
 }
 
 // 4: Tìm ước chung lớn nhất của hai số nguyên a, b.
-int timUCLN(int a, int b) {
+void timUCLN() {
+  int a, b;
+  printf("Nhap a: ");
+  scanf("%d", &a);
+  printf("Nhap b: ");
+  scanf("%d", &b);
   // TODO
-  return 0;
 }
 
 void chonMenu(int &chon) {
@@ -74,15 +88,19 @@ void chonMenu(int &chon) {
     switch (chon) {
     case 1:
       printf("1. Giai phuong trinh bac 1 ax + b = 0\n");
+      giaiPTBac1();
       break;
     case 2:
       printf("2. Kiem tra so hoan thien\n");
+      laSoHoanThien();
       break;
     case 3:
       printf("3. Liet ke cac so hoan thien tu 1 den n\n");
+      lietKeSoHoanThien();
       break;
     case 4:
       printf("4. Tim uoc chung lon nhat cua a, b\n");
+      timUCLN();
       break;
     case 0:
       printf("Thoat chuong trinh\n");
