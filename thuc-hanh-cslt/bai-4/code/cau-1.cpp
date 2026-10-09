@@ -82,6 +82,16 @@ void demCacSoNguyenTo(int n) {
   printf("So luong so nguyen to trong pham vi tu 1 den %d la: %d\n", n, dem);
 }
 
+void tongCacSoNguyenTo(int n) {
+  int tong = 0;
+  for (int i = 2; i <= n; i++) {
+    if (kiemTraSoNguyenTo(i)) {
+      tong += i;
+    }
+  }
+  printf("Tong cac so nguyen to trong pham vi tu 1 den %d la: %d\n", n, tong);
+}
+
 int main() {
   int n;
   // a. Nhập vào một số nguyên n (0 < n < 100).
@@ -96,5 +106,7 @@ int main() {
   lietKeCacSoNguyenTo(n);
   // d. Đếm số lượng số nguyên tố trong phạm vi từ 1 đến n.
   demCacSoNguyenTo(n);
+  // e. Tính tổng các số nguyên tố trong phạm vi từ 1 đến n.
+  tongCacSoNguyenTo(n);
   return 0;
 }
