@@ -59,7 +59,16 @@
 //   a = 3 7 4 7 2 => Output: 3 2 4 2 2
 //   a = 5 5 5 => Output: 5 5 5
 
+const int max = 100;
+
+void nhapMang(int a[], int &n) {
+  printf("Nhap so phan tu mang a: ");
+  scanf("%d", &n);
+}
+
 int main() {
-  // TODO
+  int a[max];
+  int n;
+  nhapMang(a, n);
   return 0;
 }
