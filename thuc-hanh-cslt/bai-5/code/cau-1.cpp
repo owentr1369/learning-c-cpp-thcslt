@@ -98,6 +98,26 @@ void timViTriPhanTu(int a[], int n) {
   printf("%d khong ton tai trong mang a\n", x);
 }
 
+int kiemTraSoNguyenTo(int n) {
+  int dem = 0;
+  for (int i = 1; i <= n; i++) {
+    if (n % i == 0) {
+      dem++;
+    }
+  }
+  return dem == 2;
+}
+
+void kiemTraMangToanSoNguyenTo(int a[], int n) {
+  for (int i = 0; i < n; i++) {
+    if (!kiemTraSoNguyenTo(a[i])) {
+      printf("Mang a khong phai la mang toan so nguyen to\n");
+      return;
+    }
+  }
+  printf("Mang a la mang toan so nguyen to\n");
+}
+
 int main() {
   int a[max];
   int n;
@@ -110,6 +130,8 @@ int main() {
   xuatMang(b, n);
 
   timViTriPhanTu(a, n);
+
+  kiemTraMangToanSoNguyenTo(a, n);
 
   return 0;
 }
