@@ -53,7 +53,15 @@ void giaiPTBac1() {
   scanf("%f", &a);
   printf("Nhap b: ");
   scanf("%f", &b);
-  // TODO
+  if (a == 0) {
+    if (b == 0) {
+      printf("Phuong trinh vo so nghiem\n");
+    } else {
+      printf("Phuong trinh vo nghiem\n");
+    }
+  } else {
+    printf("x = %.2f\n", -b / a);
+  }
 }
 
 // 2: Kiểm tra một số nguyên có là số hoàn thiện không?
@@ -61,7 +69,17 @@ void laSoHoanThien() {
   int n;
   printf("Nhap n: ");
   scanf("%d", &n);
-  // TODO
+  int tong = 0;
+  for (int i = 1; i < n; i++) {
+    if (n % i == 0) {
+      tong += i;
+    }
+  }
+  if (n > 0 && tong == n) {
+    printf("%d la so hoan thien\n", n);
+  } else {
+    printf("%d khong la so hoan thien\n", n);
+  }
 }
 
 // 3: Liệt kê các số hoàn thiện trong phạm vi từ 1..n.
