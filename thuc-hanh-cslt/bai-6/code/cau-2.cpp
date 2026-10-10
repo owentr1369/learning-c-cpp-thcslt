@@ -1,7 +1,6 @@
-#include <cstdlib>
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <stdlib.h> // rand, srand
+#include <time.h>   // time
 
 // Câu 2: Ma trận vuông cấp n là mảng 2 chiều có số dòng = số cột = n.
 // a. Sinh ngẫu nhiên 1 ma trận vuông cấp n chứa số nguyên (n nhập từ bàn phím).
