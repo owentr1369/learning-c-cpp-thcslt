@@ -44,17 +44,48 @@ void xuatMaTran(int a[][max], int d, int c) {
 }
 
 // c. Tính tổng các phần tử của ma trận
-
-void tongPhanTuMaTran(int a[][max], int d, int c) {
+int tongMaTran(int a[][max], int d, int c) {
   int tong = 0;
-  printf("Ma tran %dx%d: \n", d, c);
   for (int i = 0; i < d; i++) {
     for (int j = 0; j < c; j++) {
       tong += a[i][j];
     }
   }
-  printf("Tong cac phan tu trong ma tran la: %d", tong);
-  printf("\n");
+  return tong;
+}
+
+// d. Tính trung bình cộng các phần tử của ma trận
+float tbcMaTran(int a[][max], int d, int c) {
+  return (float)tongMaTran(a, d, c) / (d * c);
+}
+
+// e. Tính trung bình cộng các phần tử dương
+int demSoDuong(int a[][max], int d, int c) {
+  int dem = 0;
+  for (int i = 0; i < d; i++) {
+    for (int j = 0; j < c; j++) {
+      if (a[i][j] > 0) {
+        dem++;
+      }
+    }
+  }
+  return dem;
+}
+
+int tongSoDuong(int a[][max], int d, int c) {
+  int tong = 0;
+  for (int i = 0; i < d; i++) {
+    for (int j = 0; j < c; j++) {
+      if (a[i][j] > 0) {
+        tong += a[i][j];
+      }
+    }
+  }
+  return tong;
+}
+
+float tbcSoDuong(int a[][max], int d, int c) {
+  return (float)tongSoDuong(a, d, c) / demSoDuong(a, d, c);
 }
 
 int main() {
@@ -62,6 +93,12 @@ int main() {
   int d, c;
   nhapMaTran(a, d, c);
   xuatMaTran(a, d, c);
-  tongPhanTuMaTran(a, d, c);
+  printf("Tong cac phan tu: %d\n", tongMaTran(a, d, c));
+  printf("Trung binh cong cac phan tu: %.2f\n", tbcMaTran(a, d, c));
+  if (demSoDuong(a, d, c) == 0) {
+    printf("Khong co so duong nao\n");
+  } else {
+    printf("Trung binh cong cac so duong: %.2f\n", tbcSoDuong(a, d, c));
+  }
   return 0;
 }
