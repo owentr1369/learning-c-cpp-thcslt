@@ -1,4 +1,3 @@
-#include <cstdio>
 #include <stdio.h>
 
 // Câu 1: Viết chương trình thực hiện:
@@ -117,6 +116,20 @@ void tongCotK(int a[][max], int d, int c) {
   printf("Tong cac phan tu cot thu %d la: %d", k, tong);
   printf("\n");
 }
+
+// h. Tìm phần tử lớn nhất
+int phanTuLonNhat(int a[][max], int d, int c) {
+  int lonNhat = a[0][0];
+  for (int i = 0; i < d; i++) {
+    for (int j = 0; j < c; j++) {
+      if (a[i][j] > lonNhat) {
+        lonNhat = a[i][j];
+      }
+    }
+  }
+  return lonNhat;
+}
+
 int main() {
   int a[max][max];
   int d, c;
@@ -131,5 +144,6 @@ int main() {
   }
   inDongK(a, d, c);
   tongCotK(a, d, c);
+  printf("Phan tu lon nhat trong ma tran la %d\n", phanTuLonNhat(a, d, c));
   return 0;
 }
