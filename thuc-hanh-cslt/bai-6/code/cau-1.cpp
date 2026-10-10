@@ -90,20 +90,33 @@ float tbcSoDuong(int a[][max], int d, int c) {
 }
 
 // f. Xuất các phần tử nằm trên dòng k (k do người dùng nhập)
-
 void inDongK(int a[][max], int d, int c) {
   int k;
   do {
-    printf("Nhap dong k: (1..%d) ", d);
+    printf("Nhap k de xuat phan tu dong k: (1..%d) ", d);
     scanf("%d", &k);
-    printf("Cac phan tu dong %d la: ", k);
-    for (int i = 0; i < c; i++) { // 3 cột thì chạy từ 0 đến 2
-      printf("%4d", a[k - 1][i]); // So dong - 1 index
-    }
-    printf("\n");
-  } while (k < 0 || k > d);
+  } while (k < 1 || k > d);
+  printf("Cac phan tu dong thu %d la: ", k);
+  for (int i = 0; i < c; i++) { // 3 cột thì chạy từ 0 đến 2
+    printf("%4d", a[k - 1][i]); // So dong - 1 index
+  }
+  printf("\n");
 }
 
+// g. Tính tổng các phần tử nằm trên cột k (k do người dùng nhập)
+void tongCotK(int a[][max], int d, int c) {
+  int k;
+  do {
+    printf("Nhap k de tinh tong phan tu cot k: (1..%d) ", c);
+    scanf("%d", &k);
+  } while (k < 1 || k > c);
+  int tong = 0;
+  for (int i = 0; i < d; i++) { // 3 dong thì chạy từ 0 đến 2
+    tong += a[i][k - 1];
+  }
+  printf("Tong cac phan tu cot thu %d la: %d", k, tong);
+  printf("\n");
+}
 int main() {
   int a[max][max];
   int d, c;
@@ -117,5 +130,6 @@ int main() {
     printf("Trung binh cong cac so duong: %.2f\n", tbcSoDuong(a, d, c));
   }
   inDongK(a, d, c);
+  tongCotK(a, d, c);
   return 0;
 }
