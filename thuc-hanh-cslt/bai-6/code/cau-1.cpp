@@ -1,3 +1,4 @@
+#include <cstdio>
 #include <stdio.h>
 
 // Câu 1: Viết chương trình thực hiện:
@@ -88,6 +89,21 @@ float tbcSoDuong(int a[][max], int d, int c) {
   return (float)tongSoDuong(a, d, c) / demSoDuong(a, d, c);
 }
 
+// f. Xuất các phần tử nằm trên dòng k (k do người dùng nhập)
+
+void inDongK(int a[][max], int d, int c) {
+  int k;
+  do {
+    printf("Nhap dong k: (1..%d) ", d);
+    scanf("%d", &k);
+    printf("Cac phan tu dong %d la: ", k);
+    for (int i = 0; i < c; i++) { // 3 cột thì chạy từ 0 đến 2
+      printf("%4d", a[k - 1][i]); // So dong - 1 index
+    }
+    printf("\n");
+  } while (k < 0 || k > d);
+}
+
 int main() {
   int a[max][max];
   int d, c;
@@ -100,5 +116,6 @@ int main() {
   } else {
     printf("Trung binh cong cac so duong: %.2f\n", tbcSoDuong(a, d, c));
   }
+  inDongK(a, d, c);
   return 0;
 }
