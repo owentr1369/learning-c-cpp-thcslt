@@ -39,6 +39,15 @@ void xuatMaTran(int a[][max], int n) {
   printf("\n");
 }
 
+// c. Liệt kê các phần tử trên đường chéo chính
+void xuatCheoChinh(int a[][max], int n) {
+  printf("Cac phan tu tren duong cheo chinh: ");
+  for (int i = 0; i < n; i++) {
+    printf("%4d", a[i][i]);
+  }
+  printf("\n");
+}
+
 int main() {
   // Dòng này để mỗi lần chạy thì lại sinh ngẫu nhiên khác nhau
   srand(time(NULL));
@@ -46,4 +55,5 @@ int main() {
   int n;
   sinhMaTran(a, n);
   xuatMaTran(a, n);
+  xuatCheoChinh(a, n);
 }
