@@ -28,11 +28,25 @@ void nhapMaTran(int a[][max], int &d, int &c) {
       scanf("%d", &a[i][j]);
     }
   }
+  printf("\n");
+}
+
+// b. Xuất ma trận
+void xuatMaTran(int a[][max], int d, int c) {
+  printf("Ma tran %dx%d: \n", d, c);
+  for (int i = 0; i < d; i++) {
+    for (int j = 0; j < c; j++) {
+      printf("%4d", a[i][j]);
+    }
+    printf("\n");
+  }
+  printf("\n");
 }
 
 int main() {
   int a[max][max];
   int d, c;
   nhapMaTran(a, d, c);
+  xuatMaTran(a, d, c);
   return 0;
 }
