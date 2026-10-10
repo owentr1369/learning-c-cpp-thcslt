@@ -43,10 +43,25 @@ void xuatMaTran(int a[][max], int d, int c) {
   printf("\n");
 }
 
+// c. Tính tổng các phần tử của ma trận
+
+void tongPhanTuMaTran(int a[][max], int d, int c) {
+  int tong = 0;
+  printf("Ma tran %dx%d: \n", d, c);
+  for (int i = 0; i < d; i++) {
+    for (int j = 0; j < c; j++) {
+      tong += a[i][j];
+    }
+  }
+  printf("Tong cac phan tu trong ma tran la: %d", tong);
+  printf("\n");
+}
+
 int main() {
   int a[max][max];
   int d, c;
   nhapMaTran(a, d, c);
   xuatMaTran(a, d, c);
+  tongPhanTuMaTran(a, d, c);
   return 0;
 }
