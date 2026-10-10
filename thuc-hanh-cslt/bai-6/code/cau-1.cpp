@@ -10,41 +10,140 @@
 // g. Tính tổng các phần tử nằm trên cột k (k do người dùng nhập)
 // h. Tìm phần tử lớn nhất
 
-// Test cases (dòng, cột tính từ 0):
-// Input: d = 2, c = 3, ma tran:
-//   1 -2  3
-//   4  5 -6
-//   dong k = 1, cot k = 2 => Output:
-//   c. Tong: 5
-//   d. Trung binh cong: 0.83
-//   e. Trung binh cong so duong: 3.25
-//   f. Dong 1: 4 5 -6
-//   g. Tong cot 2: -3
-//   h. Max: 5
-// Input: d = 3, c = 3, ma tran:
-//   1 2 3
-//   4 5 6
-//   7 8 9
-//   dong k = 0, cot k = 1 => Output:
-//   c. Tong: 45
-//   d. Trung binh cong: 5.00
-//   e. Trung binh cong so duong: 5.00
-//   f. Dong 0: 1 2 3
-//   g. Tong cot 1: 15
-//   h. Max: 9
-// Input: d = 1, c = 2, ma tran:
-//   -1 -3
-//   dong k = 0, cot k = 1 => Output:
-//   c. Tong: -4
-//   d. Trung binh cong: -2.00
-//   e. Khong co so duong nao
-//   f. Dong 0: -1 -3
-//   g. Tong cot 1: -3
-//   h. Max: -1
-// Input: dong k hoac cot k nam ngoai ma tran => Output: Vi tri khong hop le
-// Input: d = 0 hoac c = 0 => Output: Vui long nhap so dong, so cot lon hon 0
+const int max = 100;
+
+// a. Nhập ma trận gồm d dòng và c cột
+void nhapMaTran(int a[][max], int &d, int &c) {
+  do {
+    printf("Nhap so dong (1..%d): ", max);
+    scanf("%d", &d);
+  } while (d <= 0 || d > max);
+  do {
+    printf("Nhap so cot (1..%d): ", max);
+    scanf("%d", &c);
+  } while (c <= 0 || c > max);
+  for (int i = 0; i < d; i++) {
+    for (int j = 0; j < c; j++) {
+      printf("Nhap phan tu [%d][%d]: ", i, j);
+      scanf("%d", &a[i][j]);
+    }
+  }
+  printf("\n");
+}
+
+// b. Xuất ma trận
+void xuatMaTran(int a[][max], int d, int c) {
+  printf("Ma tran %dx%d: \n", d, c);
+  for (int i = 0; i < d; i++) {
+    for (int j = 0; j < c; j++) {
+      printf("%4d", a[i][j]);
+    }
+    printf("\n");
+  }
+  printf("\n");
+}
+
+// c. Tính tổng các phần tử của ma trận
+int tongMaTran(int a[][max], int d, int c) {
+  int tong = 0;
+  for (int i = 0; i < d; i++) {
+    for (int j = 0; j < c; j++) {
+      tong += a[i][j];
+    }
+  }
+  return tong;
+}
+
+// d. Tính trung bình cộng các phần tử của ma trận
+float tbcMaTran(int a[][max], int d, int c) {
+  return (float)tongMaTran(a, d, c) / (d * c);
+}
+
+// e. Tính trung bình cộng các phần tử dương
+int demSoDuong(int a[][max], int d, int c) {
+  int dem = 0;
+  for (int i = 0; i < d; i++) {
+    for (int j = 0; j < c; j++) {
+      if (a[i][j] > 0) {
+        dem++;
+      }
+    }
+  }
+  return dem;
+}
+
+int tongSoDuong(int a[][max], int d, int c) {
+  int tong = 0;
+  for (int i = 0; i < d; i++) {
+    for (int j = 0; j < c; j++) {
+      if (a[i][j] > 0) {
+        tong += a[i][j];
+      }
+    }
+  }
+  return tong;
+}
+
+float tbcSoDuong(int a[][max], int d, int c) {
+  return (float)tongSoDuong(a, d, c) / demSoDuong(a, d, c);
+}
+
+// f. Xuất các phần tử nằm trên dòng k (k do người dùng nhập)
+void inDongK(int a[][max], int d, int c) {
+  int k;
+  do {
+    printf("Nhap k de xuat phan tu dong k: (1..%d) ", d);
+    scanf("%d", &k);
+  } while (k < 1 || k > d);
+  printf("Cac phan tu dong thu %d la: ", k);
+  for (int i = 0; i < c; i++) { // 3 cột thì chạy từ 0 đến 2
+    printf("%4d", a[k - 1][i]); // So dong - 1 index
+  }
+  printf("\n");
+}
+
+// g. Tính tổng các phần tử nằm trên cột k (k do người dùng nhập)
+void tongCotK(int a[][max], int d, int c) {
+  int k;
+  do {
+    printf("Nhap k de tinh tong phan tu cot k: (1..%d) ", c);
+    scanf("%d", &k);
+  } while (k < 1 || k > c);
+  int tong = 0;
+  for (int i = 0; i < d; i++) { // 3 dong thì chạy từ 0 đến 2
+    tong += a[i][k - 1];
+  }
+  printf("Tong cac phan tu cot thu %d la: %d", k, tong);
+  printf("\n");
+}
+
+// h. Tìm phần tử lớn nhất
+int phanTuLonNhat(int a[][max], int d, int c) {
+  int lonNhat = a[0][0];
+  for (int i = 0; i < d; i++) {
+    for (int j = 0; j < c; j++) {
+      if (a[i][j] > lonNhat) {
+        lonNhat = a[i][j];
+      }
+    }
+  }
+  return lonNhat;
+}
 
 int main() {
-  // TODO
+  int a[max][max];
+  int d, c;
+  nhapMaTran(a, d, c);
+  xuatMaTran(a, d, c);
+  printf("Tong cac phan tu: %d\n", tongMaTran(a, d, c));
+  printf("Trung binh cong cac phan tu: %.2f\n", tbcMaTran(a, d, c));
+  if (demSoDuong(a, d, c) == 0) {
+    printf("Khong co so duong nao\n");
+  } else {
+    printf("Trung binh cong cac so duong: %.2f\n", tbcSoDuong(a, d, c));
+  }
+  inDongK(a, d, c);
+  tongCotK(a, d, c);
+  printf("Phan tu lon nhat trong ma tran la %d\n", phanTuLonNhat(a, d, c));
   return 0;
 }
