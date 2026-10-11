@@ -40,10 +40,26 @@ void inPTBien(int a[][max], int n) {
   printf("\n");
 }
 
+// b. Tính tổng các phần tử trên biên.
+void tongPTBien(int a[][max], int n) {
+  int tong = 0;
+
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      if (i == 0 || i == n - 1 || j == 0 || j == n - 1) {
+        tong += a[i][j];
+      }
+    }
+  }
+  printf("Tong cac phan tu bien cua ma tran: %d\n", tong);
+  printf("\n");
+}
+
 int main() {
   int a[max][max];
   int n;
   nhapMaTran(a, n);
   inPTBien(a, n);
+  tongPTBien(a, n);
   return 0;
 }
