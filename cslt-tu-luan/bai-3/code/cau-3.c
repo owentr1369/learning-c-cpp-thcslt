@@ -5,13 +5,15 @@
 // xác của foot và inch là một số lẻ thập phân. (Hướng dẫn: 2.54 cm = 1 inch,
 // 12 inch = 1 foot)
 
-// Test cases:
-// Input: 30.48 => Output: Inch: 12.0, Foot: 1.0
-// Input: 100   => Output: Inch: 39.4, Foot: 3.3
-// Input: 2.54  => Output: Inch: 1.0, Foot: 0.1
-// Input: 0     => Output: Inch: 0.0, Foot: 0.0
-
 int main() {
+  float cm;
+  printf("Nhap so do (cm): ");
+  scanf("%f", &cm);
+
+  float inch = cm / 2.54;
+  float foot = inch / 12;
+  printf("\nInch: %.1f", inch);
+  printf("\nFoot: %.1f\n", foot);
 
   return 0;
 }
