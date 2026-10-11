@@ -15,16 +15,45 @@
 // giá 1500, 50KW vượt tiếp theo giá 1800, phần vượt còn lại giá 2000.
 // Tổng tiền = thuê bao + tiền trong định mức + tiền vượt định mức.
 
-// Test cases (Input: chiSoCu chiSoMoi; Output: trong dinh muc, vuot, tong):
-// Input: 100 130  => Output: 36000, 0, 86000
-// Input: 0 50     => Output: 60000, 0, 110000
-// Input: 0 80     => Output: 60000, 45000, 155000
-// Input: 0 150    => Output: 60000, 165000, 275000
-// Input: 0 200    => Output: 60000, 265000, 375000
-// Input: 1000 1175 => Output: 60000, 215000, 325000
-// Input: 100 50   => Output: Chi so moi phai lon hon hoac bang chi so cu
-
 int main() {
+  int chiSoCu, chiSoMoi;
+  printf("Nhap chi so cu: ");
+  scanf("%d", &chiSoCu);
+  printf("Nhap chi so moi: ");
+  scanf("%d", &chiSoMoi);
+
+  if (chiSoMoi < chiSoCu) {
+    printf("\nChi so moi phai lon hon hoac bang chi so cu\n");
+  } else {
+    int soKW = chiSoMoi - chiSoCu;
+    int tienTrongDinhMuc, tienVuotDinhMuc;
+
+    if (soKW <= 50) {
+      tienTrongDinhMuc = soKW * 1200;
+      tienVuotDinhMuc = 0;
+    } else {
+      tienTrongDinhMuc = 50 * 1200;
+      int phanVuot = soKW - 50;
+      if (phanVuot <= 50) {
+        tienVuotDinhMuc = phanVuot * 1500;
+      } else if (phanVuot <= 100) {
+        // 50KW đầu giá 1500, phần còn lại giá 1800
+        tienVuotDinhMuc = 50 * 1500 + (phanVuot - 50) * 1800;
+      } else {
+        // 50KW đầu giá 1500, 50KW tiếp giá 1800, phần còn lại giá 2000
+        tienVuotDinhMuc = 50 * 1500 + 50 * 1800 + (phanVuot - 100) * 2000;
+      }
+    }
+
+    int tongTien = 50000 + tienTrongDinhMuc + tienVuotDinhMuc;
+    printf("\nChi so cu: %d", chiSoCu);
+    printf("\nChi so moi: %d", chiSoMoi);
+    printf("\nSo KW su dung: %d", soKW);
+    printf("\nTien trong dinh muc: %d dong", tienTrongDinhMuc);
+    printf("\nTien vuot dinh muc: %d dong", tienVuotDinhMuc);
+    printf("\nTong tien phai tra (gom 50000 dong thue bao): %d dong\n",
+           tongTien);
+  }
 
   return 0;
 }
