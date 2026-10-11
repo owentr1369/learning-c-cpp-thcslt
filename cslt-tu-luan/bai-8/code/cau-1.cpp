@@ -7,15 +7,32 @@
 // Cách hiểu: đếm số lần cặp ký tự 't' đứng liền trước 'h', phân biệt hoa
 // thường ("Th", "TH" không tính).
 
-// Test cases:
-// Input: the thing that    => Output: Co 3 chu "th"
-// Input: this is the truth => Output: Co 3 chu "th"
-// Input: ththth            => Output: Co 3 chu "th"
-// Input: hello             => Output: Co 0 chu "th"
-// Input: The Thing         => Output: Co 0 chu "th"
-// Input: t h               => Output: Co 0 chu "th"
+const int max = 1000;
+
+// Nhập 1 chuỗi (có thể chứa dấu cách), bỏ ký tự xuống dòng ở cuối
+void nhapChuoi(char s[]) {
+  fgets(s, max, stdin);
+  s[strlen(s) - 1] = '\0';
+}
+
+int demTh(char s[]) {
+  int dem = 0;
+  int n = strlen(s);
+  // Dừng ở n - 1 vì phải xét thêm ký tự đứng sau s[i]
+  for (int i = 0; i < n - 1; i++) {
+    if (s[i] == 't' && s[i + 1] == 'h') {
+      dem++;
+    }
+  }
+  return dem;
+}
 
 int main() {
+  char s[max];
+  printf("Nhap chuoi: ");
+  nhapChuoi(s);
+
+  printf("\nCo %d chu \"th\"\n", demTh(s));
 
   return 0;
 }
