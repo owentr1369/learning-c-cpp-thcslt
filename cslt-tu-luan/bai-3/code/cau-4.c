@@ -6,14 +6,27 @@
 //    Hệ số góc = (y2 - y1)/(x2 - x1)
 // b. Tính khoảng cách giữa hai điểm.
 
-// Test cases (Input: x1 y1 x2 y2):
-// Input: 1 2 4 6   => Output: He so goc: 1.33, Khoang cach: 5.00
-// Input: 0 0 3 3   => Output: He so goc: 1.00, Khoang cach: 4.24
-// Input: -1 3 2 -3 => Output: He so goc: -2.00, Khoang cach: 6.71
-// Input: 2 1 2 5   => Output: Khong tinh duoc he so goc (x1 = x2),
-//                     Khoang cach: 4.00
-
 int main() {
+  float x1, y1, x2, y2;
+  printf("Nhap toa do diem thu nhat (x1 y1): ");
+  scanf("%f %f", &x1, &y1);
+  printf("Nhap toa do diem thu hai (x2 y2): ");
+  scanf("%f %f", &x2, &y2);
+
+  // a. Hệ số góc = độ chênh theo y / độ chênh theo x
+  // x1 = x2 thì đường thẳng đứng, mẫu số bằng 0 nên không có hệ số góc
+  if (x1 != x2) {
+    float heSoGoc = (y2 - y1) / (x2 - x1);
+    printf("\nHe so goc: %.2f", heSoGoc);
+  } else {
+    printf("\nKhong tinh duoc he so goc vi x1 = x2");
+  }
+
+  // b. Khoảng cách = căn bậc hai của (dx^2 + dy^2), theo định lý Pytago
+  float dx = x2 - x1;
+  float dy = y2 - y1;
+  float khoangCach = sqrt(dx * dx + dy * dy);
+  printf("\nKhoang cach: %.2f\n", khoangCach);
 
   return 0;
 }
