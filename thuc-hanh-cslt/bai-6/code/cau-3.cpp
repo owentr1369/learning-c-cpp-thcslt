@@ -55,11 +55,30 @@ void tongPTBien(int a[][max], int n) {
   printf("\n");
 }
 
+// c.Kiểm tra xem ma trận vuông có đối xứng qua đường chéo chính hay không.
+void kiemTraDoiXung(int a[][max], int n) {
+  int doiXung = 1;
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      if (a[i][j] != a[j][i]) {
+        doiXung = 0;
+      }
+    }
+  }
+  if (doiXung) {
+    printf("Mang nay doi xung qua duong cheo chinh");
+  } else {
+    printf("Mang nay khong doi xung qua duong cheo chinh");
+  }
+  printf("\n");
+}
+
 int main() {
   int a[max][max];
   int n;
   nhapMaTran(a, n);
   inPTBien(a, n);
   tongPTBien(a, n);
+  kiemTraDoiXung(a, n);
   return 0;
 }
