@@ -2,13 +2,42 @@
 
 // Câu 3: Viết chương trình liệt kê N số nguyên tố đầu tiên.
 
-// Test cases:
-// Input: 1  => Output: 2
-// Input: 5  => Output: 2 3 5 7 11
-// Input: 10 => Output: 2 3 5 7 11 13 17 19 23 29
-// Input: 0  => Output: Vui long nhap N > 0
+// Trả về 1 nếu n là số nguyên tố, ngược lại trả về 0.
+int kiemTraSoNguyenTo(int n) {
+  int dem = 0;
+  for (int i = 1; i <= n; i++) {
+    if (n % i == 0) {
+      dem++;
+    }
+  }
+  return dem == 2;
+}
+
+void lietKeSoNguyenTo(int n) {
+  int dem = 0;
+  int x = 2;
+  // Dừng khi đã in đủ n số nguyên tố, không phải khi x đạt đến n
+  while (dem < n) {
+    if (kiemTraSoNguyenTo(x)) {
+      printf("%d ", x);
+      dem++;
+    }
+    x++;
+  }
+  printf("\n");
+}
 
 int main() {
+  int n;
+  printf("Nhap N: ");
+  scanf("%d", &n);
+
+  if (n <= 0) {
+    printf("\nVui long nhap N > 0\n");
+  } else {
+    printf("\n%d so nguyen to dau tien: ", n);
+    lietKeSoNguyenTo(n);
+  }
 
   return 0;
 }

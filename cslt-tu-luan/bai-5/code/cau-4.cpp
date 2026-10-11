@@ -4,19 +4,18 @@
 
 // Cách hiểu: in bảng cửu chương từ 2 đến 9, mỗi bảng nhân từ 1 đến 10.
 
-// Test case (không có input), output mẫu:
-// Bang cuu chuong 2
-// 2 x 1 = 2
-// 2 x 2 = 4
-// ...
-// 2 x 10 = 20
-//
-// Bang cuu chuong 3
-// 3 x 1 = 3
-// ...
-// 9 x 10 = 90
+void inBangCuuChuong(int k) {
+  printf("Bang cuu chuong %d\n", k);
+  for (int i = 1; i <= 10; i++) {
+    printf("%d x %d = %d\n", k, i, k * i);
+  }
+  printf("\n");
+}
 
 int main() {
+  for (int k = 2; k <= 9; k++) {
+    inBangCuuChuong(k);
+  }
 
   return 0;
 }

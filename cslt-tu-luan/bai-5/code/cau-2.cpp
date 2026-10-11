@@ -4,16 +4,27 @@
 // S(n) = 1 + 1.2 + 1.2.3 + ...... + 1.2.3.... n, với n nhập từ bàn phím.
 // (S(n) = 1! + 2! + 3! + ... + n!)
 
-// Test cases:
-// Input: 1  => Output: S(1) = 1
-// Input: 3  => Output: S(3) = 9
-// Input: 4  => Output: S(4) = 33
-// Input: 5  => Output: S(5) = 153
-// Input: 10 => Output: S(10) = 4037913
-// Input: 12 => Output: S(12) = 522956313
-// Input: 0  => Output: Vui long nhap n > 0
+long tinhS(int n) {
+  long s = 0;
+  long gt = 1;
+  for (int i = 1; i <= n; i++) {
+    // gt lúc này là i!, dùng lại giai thừa của vòng trước nhân thêm i
+    gt *= i;
+    s += gt;
+  }
+  return s;
+}
 
 int main() {
+  int n;
+  printf("Nhap n: ");
+  scanf("%d", &n);
+
+  if (n <= 0) {
+    printf("\nVui long nhap n > 0\n");
+  } else {
+    printf("\nS(%d) = %ld\n", n, tinhS(n));
+  }
 
   return 0;
 }
