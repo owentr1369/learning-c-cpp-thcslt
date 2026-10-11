@@ -5,16 +5,43 @@
 
 // Cách hiểu: "các ước số" là các ước nhỏ hơn chính nó (không tính n).
 
-// Test cases:
-// Input: 10    => Output: 6
-// Input: 7     => Output: 6
-// Input: 30    => Output: 6 28
-// Input: 500   => Output: 6 28 496
-// Input: 10000 => Output: 6 28 496 8128
-// Input: 6     => Output: Khong co so hoan hao nao nho hon 6
-// Input: 0     => Output: Vui long nhap N > 0
+// Trả về 1 nếu n là số hoàn hảo, ngược lại trả về 0.
+int kiemTraSoHoanHao(int n) {
+  int tong = 0;
+  for (int i = 1; i < n; i++) {
+    if (n % i == 0) {
+      tong += i;
+    }
+  }
+  return tong == n;
+}
+
+void lietKeSoHoanHao(int n) {
+  int coSo = 0;
+  // Dừng khi i chạm đến N vì chỉ lấy các số bé hơn N
+  for (int i = 1; i < n; i++) {
+    if (kiemTraSoHoanHao(i)) {
+      printf("%d ", i);
+      coSo = 1;
+    }
+  }
+  if (coSo == 0) {
+    printf("Khong co so hoan hao nao nho hon %d", n);
+  }
+  printf("\n");
+}
 
 int main() {
+  int n;
+  printf("Nhap N: ");
+  scanf("%d", &n);
+
+  if (n <= 0) {
+    printf("\nVui long nhap N > 0\n");
+  } else {
+    printf("\n");
+    lietKeSoHoanHao(n);
+  }
 
   return 0;
 }
