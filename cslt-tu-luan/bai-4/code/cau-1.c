@@ -6,15 +6,22 @@
 // giác đó.
 // Gợi ý: S=sqrt(p*(p-a)*(p-b)*(p-c)) với p =(a+b+c)/2.
 
-// Test cases (Input: a b c):
-// Input: 3 4 5  => Output: Dien tich tam giac: 6.00
-// Input: 5 5 5  => Output: Dien tich tam giac: 10.83
-// Input: 2 3 4  => Output: Dien tich tam giac: 2.90
-// Input: 1 2 3  => Output: Khong phai 3 canh cua tam giac
-// Input: 1 1 5  => Output: Khong phai 3 canh cua tam giac
-// Input: -3 4 5 => Output: Vui long nhap 3 so nguyen duong
-
 int main() {
+  int a, b, c;
+  printf("Nhap 3 canh a b c: ");
+  scanf("%d %d %d", &a, &b, &c);
+
+  if (a <= 0 || b <= 0 || c <= 0) {
+    printf("\nVui long nhap 3 so nguyen duong\n");
+  } else if (a + b > c && a + c > b && b + c > a) {
+    // Chia cho 2.0 để ra số thực, chia cho 2 sẽ mất phần lẻ vì a, b, c là int
+    float p = (a + b + c) / 2.0;
+    float s = sqrt(p * (p - a) * (p - b) * (p - c));
+    printf("\nDien tich tam giac: %.2f\n", s);
+  } else {
+    // Tổng 2 cạnh bất kỳ phải lớn hơn cạnh còn lại mới tạo thành tam giác
+    printf("\nKhong phai 3 canh cua tam giac\n");
+  }
 
   return 0;
 }
