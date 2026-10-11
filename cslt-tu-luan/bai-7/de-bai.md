@@ -32,7 +32,7 @@ d. Viết hàm tính tổng các phần tử trên cột thứ k (1≤ k ≤ m) 
 
 e. Viết hàm tính tổng các phần tử trên dòng thứ k (1≤ k ≤ n) của ma trận
 
-f. Viết hàm tìm số X có xuất hiện trong ma trận không?: nếu có thì trả về 1 – đồng thời trả về vị trí của số X ở dòng nào, cột nào thông qua tham biến; nếu không thì trả về 0.
+f. Viết hàm tìm số X có xuất hiện trong ma trận không?: nếu có thì trả về 1, đồng thời trả về vị trí của số X ở dòng nào, cột nào thông qua tham biến; nếu không thì trả về 0.
 
 g. Viết hàm tính trung bình cộng của các phần tử của ma trận.
 
