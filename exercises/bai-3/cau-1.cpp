@@ -9,8 +9,7 @@
 // f. Tính trung bình cộng các số nguyên tố trong phạm vi từ 1 đến n.
 
 // a. Nhập vào một số nguyên n (0 < n < 100).
-int nhapN() {
-  int n;
+int nhapN(int &n) {
   do {
     printf("Nhap so nguyen n (0 < n < 100): ");
     scanf("%d", &n);
@@ -75,7 +74,8 @@ int tongSoNguyenTo(int n) {
 }
 
 int main() {
-  int n = nhapN();
+  int n;
+  nhapN(n);
 
   if (kiemTraSoNguyenTo(n)) {
     printf("%d la so nguyen to\n", n);
